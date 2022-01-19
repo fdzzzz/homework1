@@ -6,7 +6,7 @@ def get_data(path):
             result.append(list(map(int, line.split(' '))))
     return result
 
-
+import math
 def analyze_data(numbers, options):
     list = numbers[0]+numbers[1]
 
@@ -15,7 +15,7 @@ def analyze_data(numbers, options):
 
     elif options == "standard deviation":
         mean = sum(list) / len(list)
-        print((sum([(x - mean)**2 for x in list])/len(list))**0.5)
+        print(math.sqrt(sum([(x - mean)**2 for x in list])/len(list)))
 
     elif options == "covariance":
         mean_0 = sum(list[0]) / len(list[0])
@@ -34,7 +34,7 @@ def analyze_data(numbers, options):
         numerator = sum([sub_0[i] * sub_1[i] for i in range(len(sub_0))])
         std_0 = sum(sub_0[i]**2 for i in range(len(sub_0)))
         std_1 = sum(sub_1[i]**2 for i in range(len(sub_1)))
-        denominator = (std_0*std_1)**0.5
+        denominator = math.sqrt(std_0*std_1)
         print(numerator / denominator)
     
     else:
