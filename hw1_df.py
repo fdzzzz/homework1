@@ -9,14 +9,16 @@ def get_data(path):
 import math
 def analyze_data(numbers, options):
     list = numbers[0]+numbers[1]
-
+    
+#find the average
     if options == "average":
         print(sum(list)/ len(list))
-
+#find standard deviation
     elif options == "standard deviation":
         mean = sum(list) / len(list)
         print(math.sqrt(sum([(x - mean)**2 for x in list])/len(list)))
-
+        
+#find covariance
     elif options == "covariance":
         mean_0 = sum(list[0]) / len(list[0])
         mean_1 = sum(list[1]) / len(list[1])
@@ -26,6 +28,7 @@ def analyze_data(numbers, options):
         denominator = len(list[0])
         print(numerator / denominator)
 
+#find correlation
     elif options == "correlation":
         mean_0 = sum(list[0]) / len(list[0])
         mean_1 = sum(list[1]) / len(list[1])
