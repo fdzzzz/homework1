@@ -1,4 +1,4 @@
-def get_data(path):
+def get_data(path: str) -> list:
     result = []
     with open(path, 'r') as filetarget:
         for line in filetarget:
@@ -6,7 +6,7 @@ def get_data(path):
     return result
 
 import math
-def analyze_data(numbers, options):
+def analyze_data(numbers: list, options: str) -> float:
     list = numbers[0]+numbers[1]
 
     if options == "average":
